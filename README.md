@@ -16,8 +16,7 @@ We have three challenge tracks: **segmentation**, **depth** and **saliency estim
 - `models/`: Contains saved models.
 - `results/`: Contains evaluation metrics and model predictions.
 - `requirements.txt`: Lists Python dependencies.
-- `README.md`: This file, providing an overview and instructions.
-- `LICENSE`: License information.
+- `README.md`: This file, provides an overview and instructions.
 
 ## Getting Started
 
@@ -41,7 +40,8 @@ We have three challenge tracks: **segmentation**, **depth** and **saliency estim
 5. **Run the baseline model:**
     Open and run `notebooks/baseline_model.ipynb`.
 
+Please read the instructions in the respective challenge folders for more details.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
