@@ -48,6 +48,6 @@ https://github.com/IVRL/Tempsal
 
 - **Baseline Notebooks**: `notebooks/baseline_model.ipynb`
 - **Scripts**: `scripts/data_preprocessing.py`, `scripts/train_model.py`, `scripts/evaluate_model.py`
-- **Evaluation Metrics**: AUC, NSS
+- **Evaluation Metrics**: AUC, CC, KLD
 
 We encourage participants to explore different approaches, share their findings, and collaborate to push the boundaries of computer vision in the domain of visual arts. Happy coding, and may the best model win!
