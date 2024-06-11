@@ -1,5 +1,5 @@
 # Saliency Estimation Challenge
-<img width="512" alt="saliency" src="https://github.com/IVRL/AI4VA/assets/16324609/a5cd595a-85af-4143-91a9-aaade6cf257c">
+<img width="1024" alt="saliency" src="https://github.com/IVRL/AI4VA/assets/16324609/6284eecc-ef90-4298-85a6-a172c155b657">
 
 #### Overview
 
