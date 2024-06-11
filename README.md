@@ -33,7 +33,7 @@ We have three challenge tracks: **segmentation**, **depth** and **saliency estim
 
 3. **Download and organize the data:**
     Follow the instructions in `data/README.md`.
-
+https://drive.google.com/drive/folders/1wkZrOFQx3LZnG_rEc_js1WvNf5HHcGtn?usp=sharing
 4. **Explore the data:**
     Open and run `notebooks/data_exploration.ipynb`.
 
