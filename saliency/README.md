@@ -42,6 +42,9 @@ Your submissions will be evaluated based on the following criteria:
 - **Innovation**: Novel approaches and innovative techniques will be highly regarded.
 
 #### Resources
+Baselines : https://github.com/matthias-k/DeepGaze (DeepGaze IIE)
+https://github.com/samyak0210/saliency 
+https://github.com/IVRL/Tempsal
 
 - **Baseline Notebooks**: `notebooks/baseline_model.ipynb`
 - **Scripts**: `scripts/data_preprocessing.py`, `scripts/train_model.py`, `scripts/evaluate_model.py`
