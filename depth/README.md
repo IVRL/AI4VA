@@ -3,7 +3,7 @@
 
 #### Overview
 
-Our workshop features three challenges focusing on applying computer vision to visual arts, centered around the AI4VA dataset. This dataset, a first-of-its-kind benchmark, is designed to evaluate vision models’ ability to interpret comic art, focusing on segmentation, depth, and saliency. It includes detailed annotations of diverse comic styles, such as the toon-styled 'Placid & Mizo'.
+Our workshop features three challenges focusing on applying computer vision to visual arts, centered around the AI4VA dataset. This dataset, a first-of-its-kind benchmark, is designed to evaluate vision models’ ability to interpret comic art, focusing on segmentation, depth, and saliency. It includes detailed annotations of diverse comic styles, such as the toon-styled 'Placid & Muzo'.
 
 #### Challenge Description
 
@@ -13,38 +13,53 @@ In the depth estimation challenge, participants are tasked with developing model
 
 The AI4VA dataset consists of images with detailed depth annotations specific to the depth estimation task. These annotations include:
 
-- **Depth Maps**: Ground truth depth values for each pixel in the images.
-- **Variety of Comic Styles**: Depth annotations for a range of comic styles, challenging the model's ability to generalize across different visual representations.
+- **Depth Annotations**: Ground truth depth values for each segment in the images.
+- **Variety of Comic Styles**: Depth annotations for two comic styles, challenging the model's ability to generalize across different visual representations.
 
 The dataset covers a diverse array of comic art styles, providing a comprehensive challenge for model accuracy and generalization.
 
-#### Instructions
 
-1. **Download the Dataset**: Follow the instructions in the `data/README.md` to download and set up the AI4VA dataset.
 
-2. **Data Exploration**: Use the `notebooks/data_exploration.ipynb` to understand the dataset structure and visualize the depth annotations.
+#### Step-by-Step Plan for Depth Ordering
+1.	Setup Environment
+	Install necessary libraries (TensorFlow, PyTorch, OpenCV, etc.).
+    ```bash
+    pip install tensorflow torch torchvision opencv-python matplotlib
+    ```
+	Ensure GPU support for faster training if available.
 
-3. **Baseline Model**: Start with the `notebooks/baseline_model.ipynb` notebook, which provides a simple baseline depth estimation model. This notebook will guide you through the initial steps of data preprocessing, model training, and evaluation.
+3.	Download and Prepare Dataset
+	Download the images and the annotations from:  https://drive.google.com/drive/folders/1C5ER7Trz7I-oyzV7YndNZZ6UJMuNTH10?usp=sharing.
 
-4. **Develop Your Model**:
-    - **Preprocess the Data**: Use the `scripts/data_preprocessing.py` script to prepare the data for training.
-    - **Train Your Model**: Modify and enhance the `scripts/train_model.py` to train your depth estimation model. Experiment with different architectures and hyperparameters.
-    - **Evaluate Your Model**: Use the `scripts/evaluate_model.py` to assess the performance of your model on the validation set. Focus on metrics such as mean absolute error (MAE) and root mean square error (RMSE).
+4. Place the training and validation images into their respective folders. Verify the dataset structure and understand the contents.
+  	
+5.	Data Exploration
+    Use the provided notebook notebooks/show_annotations_depth.ipynb to explore the dataset and the annotations.
+    Visualize a few images and their corresponding depth maps to understand the data.
+  	
+7.	Baseline Model
+    Run the baseline model provided in models/baseline_model.py.
+    Understand the preprocessing steps, model architecture, and evaluation metrics used.
+  	
+9.	Data Preprocessing
+    Modify scripts/data_preprocessing.py to preprocess the data for depth ordering.
+  	
+11.	Model Development
+    Enhance scripts/train_model.py to include a model architecture suitable for depth ordering.
+   	
+13.	Model Training
+    Train the model using the enhanced script.
+    Monitor training and validation accuracy to avoid overfitting.
+   	
+15.	Model Evaluation
+    Use scripts/evaluate_model.py to assess the performance of your model on the validation set.
+   	
+17.	Submission Preparation
+    Save your model's predictions and evaluation metrics in the results/ directory.
+    Follow the submission guidelines provided in Codalab page. (coming soon)
 
-5. **Submit Your Results**: Save your model's predictions and evaluation metrics in the `results/` directory. Follow the submission guidelines provided in the `README.md`.
 
-#### Evaluation
 
-Your submissions will be evaluated based on the following criteria:
-
-- **Accuracy**: How accurately does your model estimate the depth in the comic art images?
-- **Generalization**: How well does your model perform across different comic styles in the dataset?
-- **Innovation**: Novel approaches and innovative techniques will be highly regarded.
-
-#### Resources
-
-- **Baseline Notebooks**: `notebooks/baseline_model.ipynb`
-- **Scripts**: `scripts/data_preprocessing.py`, `scripts/train_model.py`, `scripts/evaluate_model.py`
-- **Evaluation Metrics**: MAE, RMSE
+By following these steps, you should be able to complete the Depth Ordering Challenge effectively. If you need further assistance with any specific part, feel free to ask by creating an issue!
 
 We encourage participants to explore different approaches, share their findings, and collaborate to push the boundaries of computer vision in the domain of visual arts. Happy coding, and may the best model win!
