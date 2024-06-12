@@ -22,6 +22,7 @@ The dataset covers a diverse array of comic art styles, providing a comprehensiv
 
 #### Step-by-Step Plan for Depth Ordering
 1.	Setup Environment
+   
 	Install necessary libraries (TensorFlow, PyTorch, OpenCV, etc.).
     ```bash
     pip install tensorflow torch torchvision opencv-python matplotlib
@@ -29,33 +30,41 @@ The dataset covers a diverse array of comic art styles, providing a comprehensiv
 	Ensure GPU support for faster training if available.
 
 3.	Download and Prepare Dataset
+   
 	Download the images and the annotations from:  https://drive.google.com/drive/folders/1C5ER7Trz7I-oyzV7YndNZZ6UJMuNTH10?usp=sharing.
 
-4. Place the training and validation images into their respective folders. Verify the dataset structure and understand the contents.
+5. Place the training and validation images into their respective folders. Verify the dataset structure and understand the contents.
   	
-5.	Data Exploration
-    Use the provided notebook notebooks/show_annotations_depth.ipynb to explore the dataset and the annotations.
+6.	Data Exploration
+   
+    Use the provided notebook `show_annotations_depth.ipynb` to explore the dataset and the annotations.
     Visualize a few images and their corresponding depth maps to understand the data.
   	
 7.	Baseline Model
-    Run the baseline model provided in models/baseline_model.py.
+   
+    Run the baseline model provided in `models/baseline_model.py`.
     Understand the preprocessing steps, model architecture, and evaluation metrics used.
   	
 9.	Data Preprocessing
-    Modify scripts/data_preprocessing.py to preprocess the data for depth ordering.
+    
+    Modify `scripts/data_preprocessing.py` to preprocess the data for depth ordering.
   	
 11.	Model Development
-    Enhance scripts/train_model.py to include a model architecture suitable for depth ordering.
+    
+    Enhance `scripts/train_model.py` to include a model architecture suitable for depth ordering.
    	
 13.	Model Training
+    
     Train the model using the enhanced script.
     Monitor training and validation accuracy to avoid overfitting.
    	
 15.	Model Evaluation
-    Use scripts/evaluate_model.py to assess the performance of your model on the validation set.
+    
+    Use `scripts/evaluate_model.py` to assess the performance of your model on the validation set.
    	
-17.	Submission Preparation
-    Save your model's predictions and evaluation metrics in the results/ directory.
+16.	Submission Preparation
+    
+    Save your model's predictions and evaluation metrics in the `results/` directory.
     Follow the submission guidelines provided in Codalab page. (coming soon)
 
 
