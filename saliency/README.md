@@ -20,7 +20,8 @@ The dataset covers different comic art styles, providing a comprehensive challen
 
 #### Instructions
 
-1. **Download the Dataset**: Download the images and ground truth maps from : https://drive.google.com/drive/u/6/folders/1Me6QwOA8ACDItruE7J0DrRXI9Rb_nUq1.
+1. **Download the Dataset**: Download the images and ground truth maps from : https://drive.google.com/file/d/1cNivYQCyEz6AncLTJnAfrgkGRyMsVmm_/view?usp=sharing
+   
    Place them under the data/ folder into the train and validation folders respectively.
 
 3. **Data Exploration**: Use the `show_annotations_saliency.ipynb` to understand the dataset structure and visualize the saliency annotations.
