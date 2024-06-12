@@ -4,26 +4,26 @@
 
 # AI for Visual Arts Challenges (AI4VA)
 
-Welcome to the AI for Visual Arts Challenges repository! This repository contains the resources you need to participate in the challenge, including example data, baseline models, and instructions.
+Welcome to the AI for Visual Arts Challenges repository! This repository contains the resources you need to participate in the challenge, including example notebooks, baseline models, and instructions.
 
 ## Repository Structure
 
 We have three challenge tracks: **segmentation**, **depth** and **saliency estimation**. Each track has the following structure:
 
-- `data/`: Contains raw data.
-- `notebooks/`: Contains Jupyter notebooks for data exploration and baseline models.
-- `scripts/`: Contains Python scripts for data preprocessing, training, and evaluation.
-- `models/`: Contains saved models.
-- `results/`: Contains evaluation metrics and model predictions.
+- `data/`: Contains training and validation images and ground truth data.
+- `notebooks/`: Contains Jupyter notebooks for data exploration.
+- `scripts/`: Contains Python scripts for evaluation and metrics.
+- `models/`: A folder to place your models.
+- `results/`: Contains your models' predictions.
 - `requirements.txt`: Lists Python dependencies.
-- `README.md`: This file, provides an overview and instructions.
+- `README.md`: This file, provides a task-specific overview and instructions.
 
 ## Getting Started
 
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/IVRL/AI4VA.git
-    cd ai4va-challenges
+    cd AI4VA
     ```
 
 2. **Install the dependencies:**
@@ -32,12 +32,12 @@ We have three challenge tracks: **segmentation**, **depth** and **saliency estim
     ```
 
 3. **Download and organize the data:**
-    Follow the instructions in `data/README.md`.
-https://drive.google.com/drive/folders/1wkZrOFQx3LZnG_rEc_js1WvNf5HHcGtn?usp=sharing
-4. **Explore the data:**
-    Open and run `notebooks/data_exploration.ipynb`.
+   We provide the data for each task in this Google Drive folder :  https://drive.google.com/drive/folders/1wkZrOFQx3LZnG_rEc_js1WvNf5HHcGtn?usp=sharing
+   Follow the instructions on the task page for more details.
+5. **Explore the data:**
+    Open and run `show_annotations.ipynb`.
 
-5. **Run the baseline model:**
+6. **Run the baseline model:**
     Open and run `notebooks/baseline_model.ipynb`.
 
 Please read the instructions in the respective challenge folders for more details.
