@@ -1,51 +1,54 @@
 import os
 import cv2
-import numpy as np
-from sklearn.model_selection import train_test_split
+import json
+import pandas as pd
 
+# Define paths
 data_dir = './data/images/'
-depth_dir = './data/depth_maps/'
 processed_data_dir = './data/processed/'
+annotations_file = './data/annotations.json'
 
-# Create directories if they don't exist
-os.makedirs(processed_data_dir, exist_ok=True)
-train_dir = os.path.join(processed_data_dir, 'train')
-val_dir = os.path.join(processed_data_dir, 'val')
-os.makedirs(train_dir, exist_ok=True)
-os.makedirs(val_dir, exist_ok=True)
+# Create the processed data directory if it does not exist
+if not os.path.exists(processed_data_dir):
+    os.makedirs(processed_data_dir)
 
-def preprocess_and_save(image_path, depth_path, save_dir):
-    image = cv2.imread(image_path)
-    depth = cv2.imread(depth_path, cv2.IMREAD_GRAYSCALE)
+# Load annotations
+with open(annotations_file, 'r') as f:
+    annotations = json.load(f)
+
+# Initialize lists to store CSV data
+csv_data = []
+
+# Process each image and its annotations
+for img_info in annotations['images']:
+    img_id = img_info['id']
+    img_name = img_info['file_name']
+    img_path = os.path.join(data_dir, img_name)
     
-    if image is None or depth is None:
-        print(f"Error reading {image_path} or {depth_path}")
-        return
+    # Read and preprocess the image
+    image = cv2.imread(img_path)
     
-    # Example preprocessing: resize and normalize
+    if image is None:
+        print(f"Warning: Image {img_name} not found.")
+        continue
+    
     image = cv2.resize(image, (128, 128)) / 255.0
-    depth = cv2.resize(depth, (128, 128)) / 255.0
     
-    # Save processed files
-    img_name = os.path.basename(image_path)
-    depth_name = os.path.basename(depth_path)
-    cv2.imwrite(os.path.join(save_dir, img_name), (image * 255).astype(np.uint8))
-    cv2.imwrite(os.path.join(save_dir, depth_name), (depth * 255).astype(np.uint8))
+    # Save processed image
+    cv2.imwrite(os.path.join(processed_data_dir, img_name), image * 255)
+    
+    # Find annotations for this image
+    for annotation in annotations['annotations']:
+        if annotation['image_id'] == img_id:
+            category_id = annotation['category_id']
+            intradepth = annotation['attributes'].get('Intradepth', 0)  # Default to 0 if not present
+            interdepth = annotation['attributes'].get('Interdepth', 0)  # Default to 0 if not present
+            
+            # Append to CSV data list
+            csv_data.append([img_id, category_id, intradepth, interdepth])
 
-# Collect all file paths
-image_paths = [os.path.join(data_dir, img_name) for img_name in os.listdir(data_dir)]
-depth_paths = [os.path.join(depth_dir, img_name.replace('image', 'depth')) for img_name in os.listdir(data_dir)]
+# Convert CSV data list to a DataFrame
+df = pd.DataFrame(csv_data, columns=['img_id', 'category_id', 'pred_Intradepth', 'pred_Interdepth'])
 
-# Split data into training and validation sets
-train_image_paths, val_image_paths, train_depth_paths, val_depth_paths = train_test_split(
-    image_paths, depth_paths, test_size=0.2, random_state=42)
-
-# Process and save training data
-for img_path, depth_path in zip(train_image_paths, train_depth_paths):
-    preprocess_and_save(img_path, depth_path, train_dir)
-
-# Process and save validation data
-for img_path, depth_path in zip(val_image_paths, val_depth_paths):
-    preprocess_and_save(img_path, depth_path, val_dir)
-
-print("Data preprocessing completed successfully.")
+# Save the DataFrame to a CSV file
+df.to_csv(os.path.join(processed_data_dir, 'predictions.csv'), index=False)
