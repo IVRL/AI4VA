@@ -1,32 +1,9 @@
 import numpy as np
 from sklearn.metrics import mean_squared_error
 from tensorflow.keras.models import load_model
-import cv2
 import os
 import pandas as pd
 import json
-
-def load_data(data_dir, depth_dir, gt_path):
-    images = []
-    depths = []
-    with open(gt_path, 'r') as f:
-        ground_truth = json.load(f)
-    
-    for img_name in os.listdir(data_dir):
-        img_id = img_name.split('.')[0]  # assuming img_name is in format 'img_id.jpg'
-        img_path = os.path.join(data_dir, img_name)
-        depth_path = os.path.join(depth_dir, img_name.replace('image', 'depth'))
-
-        image = cv2.imread(img_path)
-        depth = cv2.imread(depth_path, cv2.IMREAD_GRAYSCALE)
-
-        image = cv2.resize(image, (128, 128)) / 255.0
-        depth = cv2.resize(depth, (128, 128)) / 255.0
-
-        images.append(image)
-        depths.append(depth)
-    
-    return np.array(images), np.array(depths), ground_truth
 
 def evaluate_model(predictions, ground_truth):
     pred_inter_depths = []
@@ -63,21 +40,50 @@ def evaluate_model(predictions, ground_truth):
 
 # Paths to validation data
 val_data_dir = './data/images/val/'
-val_depth_dir = './data/depth_maps/val/'
-gt_path = './data/annotations/val_annotations.json'  # path to the ground truth annotations
+gt_path = './data/annotations.json'  # path to the ground truth annotations
 
-# Load the validation data
-X_val, y_val, ground_truth = load_data(val_data_dir, val_depth_dir, gt_path)
+# Load the ground truth annotations
+with open(gt_path, 'r') as f:
+    ground_truth_data = json.load(f)
+
+# Transform ground truth data for easier lookup
+ground_truth = {}
+for ann in ground_truth_data['annotations']:
+    img_id = str(ann['image_id'])
+    category_id = str(ann['category_id'])
+    intradepth = ann['attributes'].get('Intradepth', 0)
+    interdepth = ann['attributes'].get('Interdepth', 0)
+    if img_id not in ground_truth:
+        ground_truth[img_id] = {}
+    ground_truth[img_id][category_id] = {
+        'Intradepth': intradepth,
+        'Interdepth': interdepth
+    }
 
 # Load the trained model
 model = load_model('best_model.h5')
+
+# Load validation images
+X_val = []
+img_ids = []
+for img_info in ground_truth_data['images']:
+    img_id = img_info['id']
+    img_name = img_info['file_name']
+    img_path = os.path.join(val_data_dir, img_name)
+    image = cv2.imread(img_path)
+    if image is not None:
+        image = cv2.resize(image, (128, 128)) / 255.0
+        X_val.append(image)
+        img_ids.append(img_id)
+
+X_val = np.array(X_val)
 
 # Get predictions
 predictions = model.predict(X_val)
 
 # Prepare predictions dataframe
 predictions_df = pd.DataFrame(predictions, columns=['pred_Intradepth', 'pred_Interdepth'])
-predictions_df['img_id'] = [img_id for img_id in ground_truth.keys()]
+predictions_df['img_id'] = img_ids
 predictions_df['category_id'] = [cat_id for img in ground_truth.values() for cat_id in img.keys()]
 
 # Evaluate the model
