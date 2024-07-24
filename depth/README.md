@@ -37,7 +37,7 @@ The dataset covers a diverse array of comic art styles, providing a comprehensiv
 
 4. **Data Exploration**
 
-    Use the provided notebook `show_annotations_depth.ipynb` to explore the dataset and the annotations.
+    Use the provided notebook `show_annotations_depth (1).ipynb` to explore the dataset and the annotations.
     Visualize a few images and their corresponding depth maps to understand the data.
 
 5. **Baseline Model**
