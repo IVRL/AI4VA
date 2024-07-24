@@ -18,56 +18,54 @@ The AI4VA dataset consists of images with detailed depth annotations specific to
 
 The dataset covers a diverse array of comic art styles, providing a comprehensive challenge for model accuracy and generalization.
 
-
-
 #### Step-by-Step Plan for Depth Ordering
-1.	Setup Environment
-   
-	Install necessary libraries (TensorFlow, PyTorch, OpenCV, etc.).
+1. **Setup Environment**
+
+    Install necessary libraries (TensorFlow, PyTorch, OpenCV, etc.).
     ```bash
     pip install tensorflow torch torchvision opencv-python matplotlib
     ```
-	Ensure GPU support for faster training if available.
+    Ensure GPU support for faster training if available.
 
-3.	Download and Prepare Dataset
-   
-	Download the images and the annotations from:  https://drive.google.com/drive/folders/1C5ER7Trz7I-oyzV7YndNZZ6UJMuNTH10?usp=sharing.
+2. **Download and Prepare Dataset**
 
-5. Place the training and validation images into their respective folders. Verify the dataset structure and understand the contents.
-  	
-6.	Data Exploration
-   
+    Download the images and the annotations from: [Google Drive](https://drive.google.com/drive/folders/1C5ER7Trz7I-oyzV7YndNZZ6UJMuNTH10?usp=sharing).
+
+3. **Organize Dataset**
+
+    Place the training and validation images into their respective folders. Verify the dataset structure and understand the contents.
+
+4. **Data Exploration**
+
     Use the provided notebook `show_annotations_depth.ipynb` to explore the dataset and the annotations.
     Visualize a few images and their corresponding depth maps to understand the data.
-  	
-7.	Baseline Model
-   
+
+5. **Baseline Model**
+
     Run the baseline model provided in `models/baseline_model.py`.
     Understand the preprocessing steps, model architecture, and evaluation metrics used.
-  	
-9.	Data Preprocessing
-    
+
+6. **Data Preprocessing**
+
     Modify `scripts/data_preprocessing.py` to preprocess the data for depth ordering.
-  	
-11.	Model Development
-    
+
+7. **Model Development**
+
     Enhance `scripts/train_model.py` to include a model architecture suitable for depth ordering.
-   	
-13.	Model Training
-    
+
+8. **Model Training**
+
     Train the model using the enhanced script.
     Monitor training and validation accuracy to avoid overfitting.
-   	
-15.	Model Evaluation
-    
+
+9. **Model Evaluation**
+
     Use `scripts/evaluate_model.py` to assess the performance of your model on the validation set.
-   	
-16.	Submission Preparation
-    
+
+10. **Submission Preparation**
+
     Save your model's predictions and evaluation metrics in the `results/` directory.
-    Follow the submission guidelines provided in Codalab page. (coming soon)
-
-
+    Follow the submission guidelines provided on the Codalab page. (coming soon)
 
 By following these steps, you should be able to complete the Depth Ordering Challenge effectively. If you need further assistance with any specific part, feel free to ask by creating an issue!
 
