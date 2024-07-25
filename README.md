@@ -44,4 +44,4 @@ Please read the instructions in the respective challenge folders for more detail
 
 ## License
 
-This project is licensed under the MIT License.
+The provided model and datasets are available for unrestricted use in personal, research, non-commercial, and not-for-profit endeavours. For any other usage scenarios, kindly contact the AI4VA organisers via Email: ai4vaeccv2024-organizers@googlegroups.com, providing a detailed description of your requirements, to establish a tailored licensing arrangement. 
