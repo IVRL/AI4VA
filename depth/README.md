@@ -65,7 +65,7 @@ The dataset covers a diverse array of comic art styles, providing a comprehensiv
 10. **Submission Preparation**
 
     Save your model's predictions and evaluation metrics in the `results/` directory.
-    Follow the submission guidelines provided on the Codalab page. (coming soon)
+    Follow the submission guidelines provided on the [Codalab page. ](https://codalab.lisn.upsaclay.fr/competitions/19857)
 
 By following these steps, you should be able to complete the Depth Ordering Challenge effectively. If you need further assistance with any specific part, feel free to ask by creating an issue!
 
