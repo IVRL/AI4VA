@@ -33,7 +33,7 @@ Make sure that `"comic_images_folder` and `annotations_folder` are correct.
     - **Train Your Model**: Modify and enhance the `scripts/train.py` to train your saliency estimation model. Experiment with different architectures and hyperparameters. You can implement your model in `models/model.py` or import any baseline.
     - **Evaluate Your Model**: Use the `scripts/evaluate_model.py` to assess the performance of your model on the validation set. Aim to improve all metrics such as Area Under Curve (AUC), Correlation Coefficient (CC) and Kullbeck-Leibler Divergence (KLD). The implementations of these metrics are provided in `scripts/metrics.py`.
 
-6. **Submit Your Results**: Save your model's predictions on the test dataset in the `results/` directory. Follow the submission guidelines provided on the Codalab page (Coming soon).
+6. **Submit Your Results**: Save your model's predictions on the test dataset in the `results/` directory. Follow the submission guidelines provided on the [Codalab page](https://codalab.lisn.upsaclay.fr/competitions/19855) .
 
 #### Evaluation
 
