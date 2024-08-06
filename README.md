@@ -13,7 +13,7 @@ Welcome to the AI for Visual Arts Challenges repository! This repository contain
 
 ## Repository Structure
 
-We have three challenge tracks: **segmentation**, **depth** and **saliency estimation**. Each track has the following structure:
+We have two challenge tracks: **depth** and **saliency estimation**. Each track has the following structure:
 
 - `data/`: Contains training and validation images and ground truth data.
 - `notebooks/`: Contains Jupyter notebooks for data exploration.
