@@ -4,6 +4,8 @@
 
 # AI for Visual Arts Challenges (AI4VA) on Depth and Saliency
 
+https://sites.google.com/view/ai4vaeccv2024/participation
+
 Welcome to the AI for Visual Arts Challenges repository! This repository contains the resources you need to participate in the challenge, including example notebooks, baseline models, and instructions.
 
 **Important Notice: Submission Issue on Codalab Challenge**
