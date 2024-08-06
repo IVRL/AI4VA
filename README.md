@@ -8,7 +8,7 @@ Welcome to the AI for Visual Arts Challenges repository! This repository contain
 
 **Important Notice: Submission Issue on Codalab Challenge**
 
-**_Due to a server issue on Codalab, submissions are currently not being processed. We are working to resolve this as quickly as possible. Thank you for your patience and understanding._**
+**_Due to a server issue on Codalab, submissions are currently not being processed on Chrome and Edge browsers. Please use Firefox to submit your predictions (tested on Firefox 129.0) ._**
 
 
 ## Repository Structure
