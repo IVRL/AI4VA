@@ -2,7 +2,7 @@
 ![header-ai4va](https://github.com/IVRL/AI4VA/assets/16324609/8fffabcf-72a0-4d08-9328-69798105a027)
 
 
-# AI for Visual Arts Challenges (AI4VA)
+# AI for Visual Arts Challenges (AI4VA) on Depth and Saliency
 
 Welcome to the AI for Visual Arts Challenges repository! This repository contains the resources you need to participate in the challenge, including example notebooks, baseline models, and instructions.
 
