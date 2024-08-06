@@ -34,7 +34,7 @@ Make sure that `"comic_images_folder` and `annotations_folder` are correct.
     - **Evaluate Your Model**: Use the `scripts/evaluate_model.py` to assess the performance of your model on the validation set. Aim to improve all metrics such as Area Under Curve (AUC), Correlation Coefficient (CC) and Kullbeck-Leibler Divergence (KLD). The implementations of these metrics are provided in `scripts/metrics.py`.
 
 6. **Submit Your Results**: Save your model's predictions on the test dataset in the `results/` directory. Follow the submission guidelines provided on the [Codalab page](https://codalab.lisn.upsaclay.fr/competitions/19855) .
-
+Due to a server issue on Codalab, submissions are currently not being processed on Chrome and Edge browsers. Please use Firefox to submit your predictions (tested on Firefox 129.0).
 #### Evaluation
 
 Your submissions will be evaluated based on the following criteria:
