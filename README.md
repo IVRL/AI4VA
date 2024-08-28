@@ -49,6 +49,12 @@ We have two challenge tracks: **depth** and **saliency estimation**. Each track 
 
 Please read the instructions in the respective challenge folders for more details.
 
+## NEW !! Few FAQs about the challenges: 
+1) The final score of the competition is determined by the rankings in both the Development stage and the Code submission stage, which should be identical. In other words, the rankings should not differ between these two stages.
+2) The top two teams from the Development stage will be required to submit their code through a public GitHub repository. The link to this repository should be sent to us via email, along with a technical report detailing your model. Specifics on the report can be found at: https://sites.google.com/view/ai4vaeccv2024/participation, under Challenge Participation. We will review and run the submitted code to verify that the rankings in the Development and Code Review stages match. To ensure fairness and replicate your original environment, it is crucial that the technical report includes information on all packages, libraries with version details, the platform used, the number of GPUs employed, and their specifications.
+3) The leaderboard visible on CodaLab reflects the rankings. Ideally, the leaderboard rankings in the Development stage should match those in the Code Review stage. In the event of a tie, both top-performing teams will be awarded.
+4) Certificates will be awarded to the top two teams, with additional prizes given only to the top-performing team.
+
 ## License
 
 The provided model and datasets are available for unrestricted use in personal research, non-commercial, and not-for-profit endeavours. For any other usage scenarios, kindly contact the AI4VA organisers via Email: ai4vaeccv2024-organizers@googlegroups.com, providing a detailed description of your requirements. 
